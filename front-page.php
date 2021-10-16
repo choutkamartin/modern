@@ -14,5 +14,8 @@
 <main>
     <h1>Test</h1>
 </main>
+<?php
+wp_footer();
+?>
 </body>
 </html>
