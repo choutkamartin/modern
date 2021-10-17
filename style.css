@@ -7,3 +7,7 @@ Tags: left-sidebar, responsive, modern
 Author: Martin Choutka
 Author URI: https://martinchoutka.cz/
 */
+
+.widget {
+    list-style-type: none;
+}
