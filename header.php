@@ -10,6 +10,21 @@
     ?>
 </head>
 <body>
-<header>Header</header>
+<header>
+
+    <?php
+    wp_nav_menu(
+        array(
+            "menu" => "primary",
+            "theme_location" => "primary",
+            "walker" => new Menu_Walker(),
+        )
+    )
+    ?>
+
+    <ul>
+        <li></li>
+    </ul>
+</header>
 </body>
 </html>
