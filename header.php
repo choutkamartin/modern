@@ -17,6 +17,12 @@ if ( function_exists( 'the_custom_logo' ) ) {
 }
 ?>
 <header class="bg-light">
+    <div class="bg-dark">
+        <div class="container text-light py-3">
+			<?php
+			dynamic_sidebar( "topbar" )
+			?></div>
+    </div>
     <nav class="container navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand d-flex gap-3" href="<?php echo home_url( "/" ); ?>">

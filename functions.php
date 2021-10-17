@@ -93,9 +93,20 @@ function modern_register_scripts() {
 add_action( "wp_enqueue_scripts", "modern_register_scripts" );
 
 function modern_widget_areas() {
+
+	register_sidebar( array(
+		"name"          => "Horní záhlaví",
+		"id"            => "topbar",
+		"description"   => "Oblast záhlaví",
+		"before-title"  => "",
+		"after-title"   => "",
+		"before-widget" => "",
+		"after-widget"  => "",
+	) );
+
 	register_sidebar( array(
 		"name"          => "Záhlaví",
-		"id"            => "topbar",
+		"id"            => "header",
 		"description"   => "Oblast záhlaví",
 		"before-title"  => "",
 		"after-title"   => "",
