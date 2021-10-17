@@ -22,9 +22,6 @@
     )
     ?>
 
-    <ul>
-        <li></li>
-    </ul>
 </header>
 </body>
 </html>
