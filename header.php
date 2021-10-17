@@ -16,10 +16,10 @@ if ( function_exists( 'the_custom_logo' ) ) {
 	$logo           = wp_get_attachment_image_src( $custom_logo_id );
 }
 ?>
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<header class="bg-light">
+    <nav class="container navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="<?php echo home_url( "/" ); ?>">
+            <a class="navbar-brand d-flex gap-3" href="<?php echo home_url( "/" ); ?>">
                 <img src="<?= $logo[0] ?>" alt="" width="32" height="32" class="d-inline-block align-text-top">
 				<?php
 				echo get_bloginfo( "name" );
