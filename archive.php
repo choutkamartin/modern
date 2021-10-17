@@ -1,8 +1,8 @@
 <?php
 get_header();
 ?>
-    <main>
-        <h1><?php the_title(); ?></h1>
+    <main class="container py-5">
+        <h1>Blog</h1>
 		<?php
 		if ( have_posts() ) {
 			while ( have_posts() ) {
