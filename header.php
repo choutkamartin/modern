@@ -19,7 +19,7 @@ if ( function_exists( 'the_custom_logo' ) ) {
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="<?php echo home_url( "/" ); ?>">
                 <img src="<?= $logo[0] ?>" alt="" width="32" height="32" class="d-inline-block align-text-top">
 				<?php
 				echo get_bloginfo( "name" );
@@ -42,10 +42,9 @@ if ( function_exists( 'the_custom_logo' ) ) {
 					)
 				)
 				?>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+				<?php
+				get_search_form();
+				?>
             </div>
         </div>
     </nav>
