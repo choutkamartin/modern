@@ -1,25 +1,41 @@
 <?php
 
 class Menu_Walker extends Walker_Nav_Menu {
-	function start_el( &$output, $item, $depth = 0, $args = [], $id = 0 ) {
-		$output .= "<li class='" . implode( " ", $item->classes ) . "'>";
 
-		if ( $item->url && $item->url != '#' ) {
-			$output .= '<a href="' . $item->url . '">';
+	public function start_lvl( &$output, $depth = 0, $args = array() ) {
+		if ( $depth === 0 ) {
+			$output .= '<ul class="dropdown-menu" aria-labelledby="navbarDropdown">';
+		}
+	}
+
+	function start_el( &$output, $item, $depth = 0, $args = [], $id = 0 ) {
+		if ( $args->walker->has_children ) {
+			$output .= "<li class='nav-item dropdown" . implode( " ", $item->classes ) . "'>";
 		} else {
+			$output .= "<li class='nav-item" . implode( " ", $item->classes ) . "'>";
+		}
+
+		if ( $item->url && $item->url != '#' && ( $args->walker->has_children == false ) ) {
+			$output .= '<a class="nav-link" href="' . $item->url . '">';
+		} else if ( $args->walker->has_children == false ) {
 			$output .= '<span>';
+		}
+
+		if ( $item->url == false && $args->walker->has_children == true ) {
+			$output .= '<a class="nav-link dropdown-toggle" href="' . $item->url . '" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">';
 		}
 
 		$output .= $item->title;
 
-		if ( $item->url && $item->url != '#' ) {
+		if ( $item->url == false && $args->walker->has_children == true ) {
 			$output .= '</a>';
-		} else {
-			$output .= '</span>';
 		}
 
-		if ( $args->walker->has_children ) {
-			$output .= '<i class=""></i>';
+		if ( $item->url && $item->url != '#' && ( $args->walker->has_children == false ) ) {
+			$output .= '</a>';
+		} else if ( $args->walker->has_children == false ) {
+			$output .= '</span>';
 		}
 	}
 }
