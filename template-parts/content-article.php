@@ -1,19 +1,19 @@
-<div>
-    <div>
+<article>
+    <span>
 		<?php
 		the_date();
 		?>
-    </div>
+    </span>
     <div>
 		<?php
 		the_tags( "<span>", "</span><span>", "</span>" );
 		?>
     </div>
-    <div>
+    <span>
 		<?php
 		comments_number();
 		?>
-    </div>
+    </span>
     <div>
 		<?php
 		the_content();
@@ -24,4 +24,4 @@
 		comments_template();
 		?>
     </div>
-</div>
+</article>

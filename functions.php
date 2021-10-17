@@ -58,4 +58,28 @@ function modern_register_scripts() {
 
 add_action( "wp_enqueue_scripts", "modern_register_scripts" );
 
+function modern_widget_areas() {
+	register_sidebar( array(
+		"name"          => "Záhlaví",
+		"id"            => "topbar",
+		"description"   => "Oblast záhlaví",
+		"before-title"  => "",
+		"after-title"   => "",
+		"before-widget" => "",
+		"after-widget"  => "",
+	) );
+
+	register_sidebar( array(
+		"name"          => "Zápatí",
+		"id"            => "footer",
+		"description"   => "Oblast zápatí",
+		"before-title"  => "",
+		"after-title"   => "",
+		"before-widget" => "",
+		"after-widget"  => "",
+	) );
+}
+
+add_action( "widgets_init", "modern_widget_areas" );
+
 ?>

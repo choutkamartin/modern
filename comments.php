@@ -1,9 +1,9 @@
 <div>
 	<?php
 	if ( ! have_comments() ) {
-		echo "Leave a comment";
+		echo "Zanechte komentář";
 	} else {
-		echo get_comments_number() . " Comments";
+		echo get_comments_number() . " komentářů";
 	}
 	?>
     <div>
