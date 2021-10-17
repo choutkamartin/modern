@@ -1,4 +1,12 @@
 <?php
+
+function modern_theme_support()
+{
+    add_theme_support("title-tag");
+}
+
+add_action("after_setup_theme", "modern_theme_support");
+
 function modern_register_styles()
 {
     $version = wp_get_theme()->get("Version");
