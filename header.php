@@ -10,22 +10,27 @@
     ?>
 </head>
 <body>
-<header>
-
+<a>
     <?php
-    if (function_exists('the_custom_logo')) {
-        the_custom_logo();
-    }
+    echo get_bloginfo("name");
     ?>
-    <?php
-    wp_nav_menu(
-        array(
-            "menu" => "primary",
-            "theme_location" => "primary",
-            "walker" => new Menu_Walker(),
-        )
+</a>
+<?php
+if (function_exists('the_custom_logo')) {
+    $custom_logo_id = get_theme_mod("custom_logo");
+    $logo = wp_get_attachment_image_src($custom_logo_id);
+}
+?>
+<img src="<?= $logo[0] ?>"
+<?php
+wp_nav_menu(
+    array(
+        "menu" => "primary",
+        "theme_location" => "primary",
+        "walker" => new Menu_Walker(),
     )
-    ?>
+)
+?>
 
 </header>
 </body>

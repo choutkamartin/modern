@@ -14,5 +14,4 @@ get_header();
     </main>
 <?php
 get_footer();
-wp_footer();
 ?>
